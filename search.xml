@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Lesson one of CYNetWork</title>
+      <link href="2020/09/14/lesson-one-of-cynetwork/"/>
+      <url>2020/09/14/lesson-one-of-cynetwork/</url>
+      
+        <content type="html"><![CDATA[<h1 id="诚殷网络第一课"><a href="#诚殷网络第一课" class="headerlink" title="诚殷网络第一课"></a>诚殷网络第一课</h1><h3 id="PC与服务器的区别"><a href="#PC与服务器的区别" class="headerlink" title="PC与服务器的区别"></a>PC与服务器的区别</h3><pre><code>服务器侧重于稳定性及多线程，PC侧重用户体验和通用性</code></pre><h3 id="服务器端常见操作系统"><a href="#服务器端常见操作系统" class="headerlink" title="服务器端常见操作系统"></a>服务器端常见操作系统</h3><h5 id="Window："><a href="#Window：" class="headerlink" title="Window："></a>Window：</h5><pre><code>- Windows2003- Windows2008- Windows2012- Windows2016- Windows2019</code></pre><h3 id="Linux："><a href="#Linux：" class="headerlink" title="Linux："></a>Linux：</h3><pre><code>- CentOS- Ubuntu- RedHat- Debian</code></pre><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><pre><code>- IIS- Apache- Nginx- Tomcat- Weblogic</code></pre><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><pre><code>- Access- SQLserver（MSsql）- Mysql- Oracle- Redis- Mongodb</code></pre><h3 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h3><pre><code>- ASP- ASPX(ASP.NET)- JSP- PHP</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 扫盲 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网安预备基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Test</title>
       <link href="2020/09/13/sort-algorithms/"/>
       <url>2020/09/13/sort-algorithms/</url>
