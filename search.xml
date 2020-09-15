@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>IIS+MySQL+PHP环境搭建</title>
+      <link href="2020/09/15/iis-mysql-php/"/>
+      <url>2020/09/15/iis-mysql-php/</url>
+      
+        <content type="html"><![CDATA[<h2 id="windows-server-2016下搭建IIS-PHP-MySQL"><a href="#windows-server-2016下搭建IIS-PHP-MySQL" class="headerlink" title="windows server 2016下搭建IIS+PHP+MySQL"></a>windows server 2016下搭建IIS+PHP+MySQL</h2><p>在安装IIS时在默认选项中额外勾选CGI<br><img src="./1.png" alt></p><p>下载NTS版本的PHP，注意是否有相应的VC运行库<br><img src="./2.png" alt><br>对PHP环境进行配置（修改PHP.ini）</p><p>1.解压文件，将php文件夹中的php.ini-development文件进行备份（修改文件前备份是个好习惯）<br>2.记事本打开php.ini-development文件，修改为对应时区，date.timezone =”Asia/Shanghai”，注意去掉前面的分号“;”。<br>3.激活你想要的扩展选项，即将相应dll语句前的分号“;”删除；由于是PHP+MySQL环境，推荐激活 gd2、mbstring、mysqli、pdo_mysql<br>4.保存为php.ini<br><img src="./3.png" alt></p><p>IIS配置PHP<br>打开IIS管理器，选择处理程序映射（Handler Mappings）<br><img src="./4.png" alt></p><p>选择右边的添加模块映射<br><img src="./5.png" alt></p><p>填写对应选项<br><img src="./6.png" alt></p><p>验证<br>在网站目录下添加index.php文件，在文件中写入<?php phpinfo(); ?>。</p><p>在默认文档下添加index.php<br><img src="./7.png" alt><br>访问localhost<br><img src="./8.png" alt></p><p>下载安装Windows版MySQL<br>关于此项请移步<a href="https://blog.csdn.net/u014416239/article/details/52446608" target="_blank" rel="noopener">https://blog.csdn.net/u014416239/article/details/52446608</a><br>或者<a href="www.baidu.com">百度</a>搜索 Windows下安装MySQL</p><p>基于PHP的CMS部署<br>将CMS解压（以解压到C盘根目录为例）<br><img src="./9.png" alt><br>给文件夹设置权限，方便起见，这里添加Everyone用户并赋予完全控制 权限（其实应该是给IUSR 用户赋予相关权限）<br><img src="./10.png" alt></p><p>在IIS管理器中添加网站，填入相关内容<br><img src="./11.png" alt></p><p>有闲心的话可以在默认文档中添加index.php作为默认首页<br><img src="./12.png" alt></p><p>打开127.0.0.1:[设置的端口] 访问网站,根据CMS的引导完成CMS的部署</p><p>最终结果<br><img src="./13.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 环境搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网安预备基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Lesson one of CYNetWork</title>
       <link href="2020/09/14/lesson-one-of-cynetwork/"/>
       <url>2020/09/14/lesson-one-of-cynetwork/</url>

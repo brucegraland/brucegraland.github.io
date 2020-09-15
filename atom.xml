@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://brucegraland.github.io/blog/"/>
-  <updated>2020-09-14T13:53:59.003Z</updated>
+  <updated>2020-09-15T14:08:46.210Z</updated>
   <id>https://brucegraland.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IIS+MySQL+PHP环境搭建</title>
+    <link href="https://brucegraland.github.io/blog/2020/09/15/iis-mysql-php/"/>
+    <id>https://brucegraland.github.io/blog/2020/09/15/iis-mysql-php/</id>
+    <published>2020-09-15T10:56:06.000Z</published>
+    <updated>2020-09-15T14:08:46.210Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;windows-server-2016下搭建IIS-PHP-MySQL&quot;&gt;&lt;a href=&quot;#windows-server-2016下搭建IIS-PHP-MySQL&quot; class=&quot;headerlink&quot; title=&quot;windows server
+        
+      
+    
+    </summary>
+    
+      <category term="环境搭建" scheme="https://brucegraland.github.io/blog/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="网安预备基础" scheme="https://brucegraland.github.io/blog/tags/%E7%BD%91%E5%AE%89%E9%A2%84%E5%A4%87%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>Lesson one of CYNetWork</title>
