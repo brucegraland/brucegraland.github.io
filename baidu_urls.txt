@@ -1,2 +1,0 @@
-https://brucegraland.github.io/blog/2020/09/15/iis-mysql-php/
-https://brucegraland.github.io/blog/2020/09/14/lesson-one-of-cynetwork/
