@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://brucegraland.github.io/blog/"/>
-  <updated>2020-09-15T14:08:46.210Z</updated>
+  <updated>2020-09-17T12:05:05.104Z</updated>
   <id>https://brucegraland.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL注入总结</title>
+    <link href="https://brucegraland.github.io/blog/2020/09/17/sql-zhu-ru-zong-jie/"/>
+    <id>https://brucegraland.github.io/blog/2020/09/17/sql-zhu-ru-zong-jie/</id>
+    <published>2020-09-17T10:46:25.000Z</published>
+    <updated>2020-09-17T12:05:05.104Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;0x01-什么是SQL注入&quot;&gt;&lt;a href=&quot;#0x01-什么是SQL注入&quot; class=&quot;headerlink&quot; title=&quot;0x01 什么是SQL注入&quot;&gt;&lt;/a&gt;0x01
+        
+      
+    
+    </summary>
+    
+      <category term="SQL inject" scheme="https://brucegraland.github.io/blog/categories/SQL-inject/"/>
+    
+    
+      <category term="WEB基础漏洞" scheme="https://brucegraland.github.io/blog/tags/WEB%E5%9F%BA%E7%A1%80%E6%BC%8F%E6%B4%9E/"/>
+    
+  </entry>
   
   <entry>
     <title>IIS+MySQL+PHP环境搭建</title>
