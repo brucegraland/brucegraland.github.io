@@ -8,7 +8,7 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="端口    注：以下特指软件端口，硬件端口（接口）本文不做详解    端口，又称为连接端口、端口、协议端口在电脑网络中是一种经由软件创建的服务，在一个电脑操作系统中扮演通信的端点。每个端口都会与主机的IP地址及通信协议关联。端口以16比特数">
+    <meta name="description" content="诚殷网络 总结二端口注：以下特指软件端口，硬件端口（接口）本文不做详解端口，又称为连接端口、端口、协议端口在电脑网络中是一种经由软件创建的服务，在一个电脑操作系统中扮演通信的端点。每个端口都会与主机的IP地址及通信协议关联。端口以16比特数">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -348,14 +348,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>端口<br>    注：以下特指软件端口，硬件端口（接口）本文不做详解<br>    端口，又称为连接端口、端口、协议端口在电脑网络中是一种经由软件创建的服务，在一个电脑操作系统中扮演通信的端点。每个端口都会与主机的IP地址及通信协议关联。端口以16比特数字来表示，这被称为端口编号（故端口共有2^16=65536个,范围为0~65535）。 位于传输层的通信协议通常需要指定端口号，例如在TCP/IP协议族之下的TCP与UDP协议。<br>常见服务及对应端口<br>|HTTP|HTTPS|SSH|DNS|Telnet|FTP|DHCP|SMTP|POP3|RDP|SMB|Mysql|<br>|:–:|:—:|:-:|:-:|:—-:|:-:|:–:|:–:|:–:|:-:|:-:|:—:|<br>|80|443|22|53|23|20/21|67/68|25|110|3389|445|3306</p>
-<p>协议<br>    网络协议指的是计算机网络中互相通信的对等实体之间交换信息时所必须遵守的规则的集合。<br>    对等实体通常是指计算机网络体系结构中处于相同层次的信息单元。一般系统网络协议包括五个部分：通信环境，传输服务，词汇表，信息的编码格式，时序、规则和过程。<br>    网络协议三要素<br>    一个网络协议至少包括三要素:<br>    语法：用来规定信息格式;数据及控制信息的格式、编码及信号电平等。<br>    语义：用来说明通信双方应当怎么做;用于协调与差错处理的控制信息。<br>    规则：(时序)定义了何时进行通信，先讲什么，后讲什么，讲话的速度等。 比如是采用同步传输还是异步传输</p>
-<pre><code>在不同的网络结构体系中，同一协议可能属于不同层次。
-
-注在TCP/IP协议栈中，数据链路层和物理层合称的网络接口层，图中为了方便表述而将其分开。</code></pre><p>DNS劫持<br>    DNS解析过程（DNS端口 ：TCP53  UDP53）<br>    域名解析过程<br>        客户机域名请求解析顺序<br>            DNS缓存–&gt;本地host文件–&gt;DNS服务器<br>            （DNS服务器的两种请求方式）</p>
-<pre><code>    服务器处理域名解析请求顺序
-        DNS高速缓存--&gt;本地区域解析文件--&gt;转发器--&gt;根
-    DNS劫持的攻击点是在DNS服务器上，把目标网站域名解析到错误的IP地址从而实现用户无法访问目标网站的目的或者蓄意或恶意要求用户访问指定IP地址（网站）的目的。</code></pre><p>ARP攻击<br>    ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。（大量发送假的APR数据包，使交换机的ARP缓存表出错）<br>    1、交换网络的嗅探<br>        假设有台主机C、D、E、位于同一个交换式局域网中，监听者主机为C，而主机D、E正在进行通信，C希望能嗅探到D与E之间的通信数据，于是C就可以伪装成D对E做ARP欺骗，向E发送伪造的ARP应答包，在这个伪造的应答包中，IP地址为D的IP地址，而MAC地址为C的MAC地址：E在接收到这个应答包后，会刷新它的ARP缓存，这样在E的ARP缓存表中就出现了D的IP地址对应的是C的MAC地址，说详细点，就是让E认为D的IP地址映射到的MAC地址为主机C的MAC地址，这样，E想要发送给D的数据实际上却发送给了C，C再将数据包转发给D，这样C就成为了D与E的中间代理人，就达到了嗅探的目的。黑客就可以利用这种手段盗取网络上的重要信息。</p>
+                <h3 id="诚殷网络-总结二"><a href="#诚殷网络-总结二" class="headerlink" title="诚殷网络 总结二"></a>诚殷网络 总结二</h3><h5 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h5><p>注：以下特指软件端口，硬件端口（接口）本文不做详解<br>端口，又称为连接端口、端口、协议端口在电脑网络中是一种经由软件创建的服务，在一个电脑操作系统中扮演通信的端点。每个端口都会与主机的IP地址及通信协议关联。端口以16比特数字来表示，这被称为端口编号（故端口共有2^16=65536个,范围为0~65535）。 位于传输层的通信协议通常需要指定端口号，例如在TCP/IP协议族之下的TCP与UDP协议。</p>
+<h5 id="常见服务及对应端口"><a href="#常见服务及对应端口" class="headerlink" title="常见服务及对应端口"></a>常见服务及对应端口</h5><table>
+<thead>
+<tr>
+<th align="center">HTTP</th>
+<th align="center">HTTPS</th>
+<th align="center">SSH</th>
+<th align="center">DNS</th>
+<th align="center">Telnet</th>
+<th align="center">FTP</th>
+<th align="center">POP3</th>
+<th align="center">RDP</th>
+<th align="center">SMB</th>
+<th align="center">Mysql</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">80</td>
+<td align="center">443</td>
+<td align="center">22</td>
+<td align="center">53</td>
+<td align="center">23</td>
+<td align="center">20/21</td>
+<td align="center">110</td>
+<td align="center">3389</td>
+<td align="center">445</td>
+<td align="center">3306</td>
+</tr>
+</tbody></table>
+<ul>
+<li>协议<br>&nbsp;网络协议指的是计算机网络中互相通信的对等实体之间交换信息时所必须遵守的规则的集合。<br>&nbsp;&nbsp;对等实体通常是指计算机网络体系结构中处于相同层次的信息单元。一般系统网络协议包括五个部分：<br>&nbsp;&nbsp;通信环境，传输服务，词汇表，信息的编码格式，时序、规则和过程。</li>
+<li>网络协议三要素<br>&nbsp;&nbsp;一个网络协议至少包括三要素:<br>&nbsp;&nbsp;语法：用来规定信息格式;数据及控制信息的格式、编码及信号电平等。<br>&nbsp;&nbsp;语义：用来说明通信双方应当怎么做;用于协调与差错处理的控制信息。<br>&nbsp;&nbsp;规则：(时序)定义了何时进行通信，先讲什么，后讲什么，讲话的速度等。 比如是采用同步传输还是异步传输</li>
+</ul>
+<p><em>在不同的网络结构体系中，同一协议可能属于不同层次。</em><br><img src="./1.png" alt></p>
+<ul>
+<li><strong>注在TCP/IP协议栈中，数据链路层和物理层合称的网络接口层，图中为了方便表述而将其分开。</strong></li>
+</ul>
+<h5 id="DNS劫持"><a href="#DNS劫持" class="headerlink" title="DNS劫持"></a>DNS劫持</h5><ul>
+<li><p><strong>DNS解析过程（DNS端口 ：TCP53  UDP53）</strong></p>
+</li>
+<li><p>客户机域名请求解析顺序<br>&nbsp;&nbsp;&nbsp;DNS缓存–&gt;本地host文件–&gt;DNS服务器</p>
+</li>
+<li><p><strong><em>DNS服务器的两种请求方式</em></strong><br><img src="./2.png" alt><br><img src="./3.png" alt></p>
+</li>
+<li><p>处理域名解析请求顺序<br>DNS高速缓存–&gt;本地区域解析文件–&gt;转发器–&gt;根</p>
+</li>
+<li><p><strong>DNS劫持的攻击点是在DNS服务器上，把目标网站域名解析到错误的IP地址从而实现用户无法访问目标网站的目的或者蓄意或恶意要求用户访问指定IP地址（网站）的目的。</strong></p>
+</li>
+</ul>
+<h5 id="ARP攻击"><a href="#ARP攻击" class="headerlink" title="ARP攻击"></a>ARP攻击</h5><ul>
+<li>ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。（大量发送假的APR数据包，使交换机的ARP缓存表出错）</li>
+<li>&nbsp;&nbsp;交换网络的嗅探<br>假设有台主机C、D、E、位于同一个交换式局域网中，监听者主机为C，而主机D、E正在进行通信，C希望能嗅探到D与E之间的通信数据，于是C就可以伪装成D对E做ARP欺骗，向E发送伪造的ARP应答包，在这个伪造的应答包中，IP地址为D的IP地址，而MAC地址为C的MAC地址：E在接收到这个应答包后，会刷新它的ARP缓存，这样在E的ARP缓存表中就出现了D的IP地址对应的是C的MAC地址，说详细点，就是让E认为D的IP地址映射到的MAC地址为主机C的MAC地址，这样，E想要发送给D的数据实际上却发送给了C，C再将数据包转发给D，这样C就成为了D与E的中间代理人，就达到了嗅探的目的。黑客就可以利用这种手段盗取网络上的重要信息。<br><img src="./4.png" alt></li>
+</ul>
 
             </div>
             <hr />
@@ -711,7 +756,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            端口    注：以下特指软件端口，硬件端口（接口）本文不做详解    端口，又称为连接端口、端口、协议端口在电脑网络中是一种经由软件创建的服务，在一个电脑操作系统中扮演通信的端点。每个端口都会与主机的IP地址及通信协议关联。端口以16比特数
+                            诚殷网络 总结二端口注：以下特指软件端口，硬件端口（接口）本文不做详解端口，又称为连接端口、端口、协议端口在电脑网络中是一种经由软件创建的服务，在一个电脑操作系统中扮演通信的端点。每个端口都会与主机的IP地址及通信协议关联。端口以16比特数
                         
                     </div>
                     <div class="publish-info">
