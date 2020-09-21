@@ -192,7 +192,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -309,8 +309,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/WEB基础漏洞/" target="_blank">
-                            <span class="chip bg-color">WEB基础漏洞</span>
+                        <a href="/tags/SQL-inject/" target="_blank">
+                            <span class="chip bg-color">SQL inject</span>
                         </a>
                         
                     </div>
@@ -321,8 +321,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/SQL-inject/" class="post-category" target="_blank">
-                            SQL inject
+                        <a href="/categories/WEB基础漏洞/" class="post-category" target="_blank">
+                            WEB基础漏洞
                         </a>
                         
                     </div>
@@ -864,7 +864,7 @@ http参数污染
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="诚殷网络 总结二">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="诚殷网络 总结二">
                         
                         <span class="card-title">诚殷网络 总结二</span>
                     </div>
@@ -872,7 +872,7 @@ http参数污染
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            诚殷网络 总结二端口注：以下特指软件端口，硬件端口（接口）本文不做详解端口，又称为连接端口、端口、协议端口在电脑网络中是一种经由软件创建的服务，在一个电脑操作系统中扮演通信的端点。每个端口都会与主机的IP地址及通信协议关联。端口以16比特数
+                            端口、协议、ARP、DNS
                         
                     </div>
                     <div class="publish-info">
@@ -883,8 +883,8 @@ http参数污染
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/扫盲/" class="post-category" target="_blank">
-                                    扫盲
+                            <a href="/categories/网安预备基础/" class="post-category" target="_blank">
+                                    网安预备基础
                                 </a>
                             
                             
@@ -894,8 +894,8 @@ http参数污染
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/网安预备基础/" target="_blank">
-                        <span class="chip bg-color">网安预备基础</span>
+                    <a href="/tags/扫盲/" target="_blank">
+                        <span class="chip bg-color">扫盲</span>
                     </a>
                     
                 </div>
@@ -913,7 +913,7 @@ http参数污染
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="IIS+MySQL+PHP环境搭建">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="IIS+MySQL+PHP环境搭建">
                         
                         <span class="card-title">IIS+MySQL+PHP环境搭建</span>
                     </div>
@@ -921,9 +921,7 @@ http参数污染
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            windows server 2016下搭建IIS+PHP+MySQL在安装IIS时在默认选项中额外勾选CGI
-下载NTS版本的PHP，注意是否有相应的VC运行库对PHP环境进行配置（修改PHP.ini）
-1.解压文件，将php文件夹中的p
+                            IIS+PHP+MySQL环境搭建
                         
                     </div>
                     <div class="publish-info">
@@ -934,8 +932,8 @@ http参数污染
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/环境搭建/" class="post-category" target="_blank">
-                                    环境搭建
+                            <a href="/categories/网安预备基础/" class="post-category" target="_blank">
+                                    网安预备基础
                                 </a>
                             
                             
@@ -945,8 +943,8 @@ http参数污染
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/网安预备基础/" target="_blank">
-                        <span class="chip bg-color">网安预备基础</span>
+                    <a href="/tags/环境搭建/" target="_blank">
+                        <span class="chip bg-color">环境搭建</span>
                     </a>
                     
                 </div>
@@ -1146,26 +1144,6 @@ http参数污染
 
 <div class="progress-bar"></div>
 
-<!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 800;
-        var uvcountOffset = 200;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
 
 <script language=javascript>
     function siteTime() {

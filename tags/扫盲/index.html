@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="分类: SQL inject, MrJ的湖边小屋">
+    <meta name="keywords" content="标签: 扫盲, MrJ的湖边小屋">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="分类: SQL inject | MrJ的湖边小屋">
+    <meta name="description" content="标签: 扫盲 | MrJ的湖边小屋">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>分类: SQL inject | MrJ的湖边小屋</title>
+    <title>标签: 扫盲 | MrJ的湖边小屋</title>
     <link rel="icon" type="image/jpeg" href="/cat.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -195,7 +195,7 @@
                     菜鸡的自我修养
                  -->
                 
-                    分类
+                    标签
                 
             </div>
 
@@ -219,42 +219,49 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
     
 
-<div id="category-cloud" class="container chip-container">
+<div id="tags" class="container chip-container">
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
             </div>
             <div class="tag-chips">
                 
                 
-                
-                <a href="/categories/环境搭建/" title="环境搭建: 1">
+                <a href="/tags/环境搭建/" title="环境搭建: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">环境搭建
+                            data-tagname="环境搭建" style="background-color: #F9EBEA;">环境搭建
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/扫盲/" title="扫盲: 2">
+                <a href="/tags/扫盲/" title="扫盲: 2">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">扫盲
+                             chip-active "
+                            data-tagname="扫盲" style="background-color: #F5EEF8;">扫盲
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/SQL-inject/" title="SQL inject: 1">
+                <a href="/tags/基础知识/" title="基础知识: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #D5F5E3;">SQL inject
+                             chip-default "
+                            data-tagname="基础知识" style="background-color: #D5F5E3;">基础知识
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
+                
+                <a href="/tags/SQL-inject/" title="SQL inject: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="SQL inject" style="background-color: #E8F8F5;">SQL inject
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
                 
             </div>
         </div>
@@ -266,52 +273,67 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <article id="articles" class="container articles">
         <div class="row tags-posts">
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="扫盲" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2020/09/17/sql-zhu-ru-zong-jie/">
+                    <a href="/2020/09/19/lesson2-cynetwork/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="SQL注入总结">
+                            <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="诚殷网络 总结二">
                             
-                            <span class="card-title">SQL注入总结</span>
+                            <span class="card-title">诚殷网络 总结二</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                0x01 什么是SQL注入sql注入就是一种通过操作输入来修改后台操作语句达到执行恶意sql语句来进行攻击的技术。
-0x02 SQL注入的分类按变量类型分数字型字符型
-按HTTP提交方式分GET注入POST注入Cookie注入
-按注入方式分
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-19
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/SQL-inject/" class="post-category" target="_blank">
-                                    SQL inject
+                                <a href="/categories/网安预备基础/" class="post-category" target="_blank">
+                                网安预备基础
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/WEB基础漏洞/" target="_blank">
-                            <span class="chip bg-color">WEB基础漏洞</span>
-                        </a>
-                        
+                </div>
+            </div>
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="扫盲" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2020/09/14/lesson-one-of-cynetwork/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="诚殷网络 总结一">
+                            
+                            <span class="card-title">诚殷网络 总结一</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/网安预备基础/" class="post-category" target="_blank">
+                                网安预备基础
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
                     </div>
-                    
                 </div>
             </div>
             
@@ -353,26 +375,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 <div class="progress-bar"></div>
 
-<!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 800;
-        var uvcountOffset = 200;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
 
 <script language=javascript>
     function siteTime() {

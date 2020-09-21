@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>诚殷网络 总结三</title>
+      <link href="2020/09/21/lesson3-cynetwork/"/>
+      <url>2020/09/21/lesson3-cynetwork/</url>
+      
+        <content type="html"><![CDATA[<h5 id="什么是CMS"><a href="#什么是CMS" class="headerlink" title="什么是CMS"></a>什么是CMS</h5><ul><li>CMS即<strong>_内容管理系统_</strong>。使用CMS的主要目的是管理网站的内容。它包含可轻松管理Web应用程序的功能。</li><li>CMS有助于执行各种操作。用户可以轻松设置布局格式，添加，修改和删除内容。允许发布网页，创建新主题，使用现有主题，建立索引和搜索。<br>CMS也可以使用插件或扩展来进一步扩展应用程序。还可以添加不同的多媒体文件，例如图像，视频和音频，以使网页更具呈现性。此外，用户可以<br>使用CMS创建多语言网站。一些常见和流行的CMS如Drupal，WordPress和Joomla。由于它们的简单性和易用性，它们在社区中非常受欢迎。</li></ul><h5 id="什么是框架？"><a href="#什么是框架？" class="headerlink" title="什么是框架？"></a>什么是框架？</h5><ul><li>框架提供了<strong>_构建和部署应用程序的标准方法_</strong>。它包含具有通用功能的通用代码,即代码可以复用。开发人员可以根据应用程序的需求进行修改和二次开发。<br>使用框架也有很多优点。框架提供了组织代码的方法,它还提高了代码的可重用性。由于软件需求可能随时更改，但使用框架开发的应用很容易进行修改。框架还提<br>供了预先构建和预先测试的工具。框架具有许多组件/部门。使开发人员可以更轻松地处理项目的各个方面。</li><li>此外，软件框架可以包括支持程序，编译器，代码库，工具以及应用程序编程接口（API）。行业中有许多框架。例如，CakePHP和CodeIgniter是用于构建动态网<br>页的开源Web框架。它们是用PHP编写的。另一方面，Django和Flask是两个用Python编写的框架。</li></ul><h5 id="CMS和框架之间的区别"><a href="#CMS和框架之间的区别" class="headerlink" title="CMS和框架之间的区别"></a>CMS和框架之间的区别</h5><ul><li>CMS和框架之间的主要区别在于，CMS是<strong>创建和管理数字内容的应用程序</strong>，而框架是包含<strong>通用功能的软件</strong>，可以根据应用程序通过其他用户编写的代码对其进行修改。</li><li>CMS和框架都是开发应用程序的软件程序。 CMS是一种内容管理系统，而框架是可重用的环境，是较大软件平台的一部分。</li></ul><h5 id="CMS和框架之间是什么关系"><a href="#CMS和框架之间是什么关系" class="headerlink" title="CMS和框架之间是什么关系"></a>CMS和框架之间是什么关系</h5><ul><li>CMS建立在框架上。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安预备基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>诚殷网络 总结二</title>
       <link href="2020/09/19/lesson2-cynetwork/"/>
       <url>2020/09/19/lesson2-cynetwork/</url>
@@ -13,14 +38,14 @@
       
       <categories>
           
-          <category> 扫盲 </category>
+          <category> 网安预备基础 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 网安预备基础 </tag>
+            <tag> 扫盲 </tag>
             
         </tags>
       
@@ -38,14 +63,14 @@
       
       <categories>
           
-          <category> SQL inject </category>
+          <category> WEB基础漏洞 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> WEB基础漏洞 </tag>
+            <tag> SQL inject </tag>
             
         </tags>
       
@@ -63,14 +88,14 @@
       
       <categories>
           
-          <category> 环境搭建 </category>
+          <category> 网安预备基础 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 网安预备基础 </tag>
+            <tag> 环境搭建 </tag>
             
         </tags>
       
@@ -88,14 +113,14 @@
       
       <categories>
           
-          <category> 扫盲 </category>
+          <category> 网安预备基础 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 网安预备基础 </tag>
+            <tag> 扫盲 </tag>
             
         </tags>
       

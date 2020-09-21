@@ -228,19 +228,37 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="tag-chips">
                 
                 
-                <a href="/tags/网安预备基础/" title="网安预备基础: 3">
+                <a href="/tags/环境搭建/" title="环境搭建: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="网安预备基础" style="background-color: #F9EBEA;">网安预备基础
-                        <span class="tag-length">3</span>
+                            data-tagname="环境搭建" style="background-color: #F9EBEA;">环境搭建
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/WEB基础漏洞/" title="WEB基础漏洞: 1">
+                <a href="/tags/扫盲/" title="扫盲: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="WEB基础漏洞" style="background-color: #F5EEF8;">WEB基础漏洞
+                            data-tagname="扫盲" style="background-color: #F5EEF8;">扫盲
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/基础知识/" title="基础知识: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="基础知识" style="background-color: #D5F5E3;">基础知识
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/SQL-inject/" title="SQL inject: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="SQL inject" style="background-color: #E8F8F5;">SQL inject
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -269,7 +287,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"网安预备基础","weight":3,"link":"/tags/网安预备基础/"},{"text":"WEB基础漏洞","weight":1,"link":"/tags/WEB基础漏洞/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"环境搭建","weight":1,"link":"/tags/环境搭建/"},{"text":"扫盲","weight":2,"link":"/tags/扫盲/"},{"text":"基础知识","weight":1,"link":"/tags/基础知识/"},{"text":"SQL inject","weight":1,"link":"/tags/SQL-inject/"}], {
         autoResize: true
     });
 </script>
@@ -310,26 +328,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 <div class="progress-bar"></div>
 
-<!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 800;
-        var uvcountOffset = 200;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
 
 <script language=javascript>
     function siteTime() {
