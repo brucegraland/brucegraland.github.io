@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://brucegraland.github.io/blog/2020/09/17/sql-zhu-ru-zong-jie/</loc>
+    <loc>https://brucegraland.github.io/blog/2020/09/22/lesson5-cynetwork/</loc>
     
-    <lastmod>2020-09-21T15:09:44.506Z</lastmod>
+    <lastmod>2020-09-22T13:06:47.846Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://brucegraland.github.io/blog/2020/09/22/lesson4-cynetwork/</loc>
+    
+    <lastmod>2020-09-22T13:06:46.523Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://brucegraland.github.io/blog/2020/09/21/lesson3-cynetwork/</loc>
+    
+    <lastmod>2020-09-22T13:06:43.863Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://brucegraland.github.io/blog/2020/09/15/iis-mysql-php/</loc>
     
-    <lastmod>2020-09-21T15:08:53.802Z</lastmod>
+    <lastmod>2020-09-22T13:06:43.026Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://brucegraland.github.io/blog/2020/09/17/sql-zhu-ru-zong-jie/</loc>
+    
+    <lastmod>2020-09-21T15:09:44.506Z</lastmod>
     
   </url>
   
@@ -26,13 +47,6 @@
     <loc>https://brucegraland.github.io/blog/2020/09/19/lesson2-cynetwork/</loc>
     
     <lastmod>2020-09-21T15:07:15.651Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://brucegraland.github.io/blog/2020/09/21/lesson3-cynetwork/</loc>
-    
-    <lastmod>2020-09-21T15:05:05.916Z</lastmod>
     
   </url>
   

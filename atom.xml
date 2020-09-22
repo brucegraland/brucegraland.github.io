@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://brucegraland.github.io/blog/"/>
-  <updated>2020-09-21T15:05:05.916Z</updated>
+  <updated>2020-09-22T13:06:47.846Z</updated>
   <id>https://brucegraland.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>诚殷网络 总结五</title>
+    <link href="https://brucegraland.github.io/blog/2020/09/22/lesson5-cynetwork/"/>
+    <id>https://brucegraland.github.io/blog/2020/09/22/lesson5-cynetwork/</id>
+    <published>2020-09-22T12:42:38.000Z</published>
+    <updated>2020-09-22T13:06:47.846Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;COOKIE和SESSION&quot;&gt;&lt;a href=&quot;#COOKIE和SESSION&quot; class=&quot;headerlink&quot; title=&quot;COOKIE和SESSION&quot;&gt;&lt;/a&gt;COOKIE和SESSION&lt;/h3&gt;&lt;h5 id=&quot;什么是COOKIE&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="网安预备基础" scheme="https://brucegraland.github.io/blog/categories/%E7%BD%91%E5%AE%89%E9%A2%84%E5%A4%87%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="web基础知识" scheme="https://brucegraland.github.io/blog/tags/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>诚殷网络 总结四</title>
+    <link href="https://brucegraland.github.io/blog/2020/09/22/lesson4-cynetwork/"/>
+    <id>https://brucegraland.github.io/blog/2020/09/22/lesson4-cynetwork/</id>
+    <published>2020-09-22T11:07:38.000Z</published>
+    <updated>2020-09-22T13:06:46.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;CND原理&quot;&gt;&lt;a href=&quot;#CND原理&quot; class=&quot;headerlink&quot; title=&quot;CND原理&quot;&gt;&lt;/a&gt;CND原理&lt;/h5&gt;&lt;p&gt;全称:Content Delivery Network或Content Ddistribute
+        
+      
+    
+    </summary>
+    
+      <category term="网安预备基础" scheme="https://brucegraland.github.io/blog/categories/%E7%BD%91%E5%AE%89%E9%A2%84%E5%A4%87%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="web基础知识" scheme="https://brucegraland.github.io/blog/tags/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>诚殷网络 总结三</title>
     <link href="https://brucegraland.github.io/blog/2020/09/21/lesson3-cynetwork/"/>
     <id>https://brucegraland.github.io/blog/2020/09/21/lesson3-cynetwork/</id>
     <published>2020-09-21T14:42:33.000Z</published>
-    <updated>2020-09-21T15:05:05.916Z</updated>
+    <updated>2020-09-22T13:06:43.863Z</updated>
     
     <summary type="html">
     
@@ -38,7 +90,7 @@
       <category term="网安预备基础" scheme="https://brucegraland.github.io/blog/categories/%E7%BD%91%E5%AE%89%E9%A2%84%E5%A4%87%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="基础知识" scheme="https://brucegraland.github.io/blog/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+      <category term="web基础知识" scheme="https://brucegraland.github.io/blog/tags/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
@@ -99,7 +151,7 @@
     <link href="https://brucegraland.github.io/blog/2020/09/15/iis-mysql-php/"/>
     <id>https://brucegraland.github.io/blog/2020/09/15/iis-mysql-php/</id>
     <published>2020-09-15T10:56:06.000Z</published>
-    <updated>2020-09-21T15:08:53.802Z</updated>
+    <updated>2020-09-22T13:06:43.026Z</updated>
     
     <summary type="html">
     
