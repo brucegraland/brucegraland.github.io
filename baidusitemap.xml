@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://brucegraland.github.io/blog/2020/09/22/lesson5-cynetwork/</loc>
+    <loc>https://brucegraland.github.io/blog/2020/09/22/cynetwork5/</loc>
     <lastmod>2020-09-22</lastmod>
   </url>
   <url>
-    <loc>https://brucegraland.github.io/blog/2020/09/22/lesson4-cynetwork/</loc>
+    <loc>https://brucegraland.github.io/blog/2020/09/22/cynetwork4/</loc>
     <lastmod>2020-09-22</lastmod>
   </url>
   <url>
-    <loc>https://brucegraland.github.io/blog/2020/09/21/lesson3-cynetwork/</loc>
+    <loc>https://brucegraland.github.io/blog/2020/09/21/cynetwork3/</loc>
+    <lastmod>2020-09-22</lastmod>
+  </url>
+  <url>
+    <loc>https://brucegraland.github.io/blog/2020/09/19/cynetwork2/</loc>
+    <lastmod>2020-09-22</lastmod>
+  </url>
+  <url>
+    <loc>https://brucegraland.github.io/blog/2020/09/14/cynetwork1/</loc>
     <lastmod>2020-09-22</lastmod>
   </url>
   <url>
@@ -18,14 +26,6 @@
   </url>
   <url>
     <loc>https://brucegraland.github.io/blog/2020/09/17/sql-zhu-ru-zong-jie/</loc>
-    <lastmod>2020-09-21</lastmod>
-  </url>
-  <url>
-    <loc>https://brucegraland.github.io/blog/2020/09/14/lesson-one-of-cynetwork/</loc>
-    <lastmod>2020-09-21</lastmod>
-  </url>
-  <url>
-    <loc>https://brucegraland.github.io/blog/2020/09/19/lesson2-cynetwork/</loc>
     <lastmod>2020-09-21</lastmod>
   </url>
 </urlset> 
