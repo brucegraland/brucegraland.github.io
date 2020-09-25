@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://brucegraland.github.io/blog/"/>
-  <updated>2020-09-25T07:09:20.579Z</updated>
+  <updated>2020-09-25T07:20:14.038Z</updated>
   <id>https://brucegraland.github.io/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://brucegraland.github.io/blog/2020/09/22/cynetwork5/"/>
     <id>https://brucegraland.github.io/blog/2020/09/22/cynetwork5/</id>
     <published>2020-09-22T12:42:38.000Z</published>
-    <updated>2020-09-25T07:09:20.579Z</updated>
+    <updated>2020-09-25T07:20:14.038Z</updated>
     
     <summary type="html">
     
@@ -38,7 +38,7 @@
       <category term="网安预备基础" scheme="https://brucegraland.github.io/blog/categories/%E7%BD%91%E5%AE%89%E9%A2%84%E5%A4%87%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="web基础知识" scheme="https://brucegraland.github.io/blog/tags/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+      <category term="web基础知识 HTTP基础" scheme="https://brucegraland.github.io/blog/tags/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-HTTP%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
